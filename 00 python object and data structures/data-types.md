@@ -1,3 +1,5 @@
+# Data types
+
 | Name | Type | Description |
 | :-| :-: | :- |
 | Integers | int | Whole numbers, 3, 30, 3000 |

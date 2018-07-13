@@ -8,13 +8,13 @@ my_string = "hello"
 # print(my_variable[4])
 
 # my_string is an iterable, stings/list/sets/tuples
-# for character in my_string:
-    # print(character)
+for character in my_string:
+    print(character)
 
-# my_list = [1, 2, 3, 4, 5]
+my_list = [1, 2, 3, 4, 5]
 
-# for number in my_list:
-    # print(number ** 2)
+for number in my_list:
+    print(number ** 2)
 
 user_wants_number = True
 while user_wants_number == True:

@@ -31,14 +31,21 @@ class Student:
         self.marks = []
 
     def average(self):
-        return sum(self.marks) / len(self.marks) 
+        return sum(self.marks) / len(self.marks)
+
+    @classmethod
+    def got_to_school(cls):
+        print("My name is {}".format(cls))
+        print("I'm a {}".format(cls))
 
 anna = Student("Jose", "Unisa")
-anna.marks.append(56)
-anna.marks.append(36)
-anna.marks.append(7)
-# print(anna.average())
-
+mark = Student("Mark", "UCT")
+# anna.marks.append(56)
+# anna.marks.append(36)
+# anna.marks.append(7)
+# self is always passed as parameter
+print(anna.got_to_school())
+print(mark.got_to_school())
 
 class Store:
     def __init__(self, name):
@@ -62,6 +69,3 @@ class Store:
         #     total += items['price']
         # return total
         return sum([item['price'] for item in self.items])
-
-shop = Store()
-print(shop)

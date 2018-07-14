@@ -37,4 +37,31 @@ anna = Student("Jose", "Unisa")
 anna.marks.append(56)
 anna.marks.append(36)
 anna.marks.append(7)
-print(anna.average())
+# print(anna.average())
+
+
+class Store:
+    def __init__(self, name):
+        # You'll need 'name' as an argument to this method.
+        # Then, initialise 'self.name' to be the argument, and 'self.items' to be an empty list.
+        self.name = name
+        self.items = []
+    
+    def add_item(self, name, price):
+        # Create a dictionary with keys name and price, and append that to self.items.
+        items = {
+            'name': name,
+            'price': price
+        }
+        self.items.append(items)
+        
+    def stock_price(self):
+        # Add together all item prices in self.items and return the total.
+        # total = 0
+        # for items in self.items:
+        #     total += items['price']
+        # return total
+        return sum([item['price'] for item in self.items])
+
+shop = Store()
+print(shop)

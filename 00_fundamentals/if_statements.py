@@ -3,13 +3,13 @@ if should_continue:
     print("Continue...")
 
 
-# people_you_know = ["John", "Max", "Mary"]
-# person = input("Enter the persoon you know: ")
+people_you_know = ["John", "Max", "Mary"]
+person = input("Enter the persoon you know: ")
 
-# if person in people_you_know:
-#     print("You know {}!".format(person))
-# else:
-#     print("You don't {}!".format(person))
+if person in people_you_know:
+    print("You know {}!".format(person))
+else:
+    print("You don't {}!".format(person))
 
 
 def who_do_you_know():

@@ -15,10 +15,7 @@ if should_continue:
 def who_do_you_know():
     people = input("What people do you know, comma seperated: ")
     people_list = people.split(",")
-    
-    people_without_spaces = []
-    for person in people_list:
-        people_without_spaces.append(person.strip())
+    people_without_spaces = [person.strip() for person in people.split(",")]
     return people_list
 
 def ask_user():

@@ -7,8 +7,8 @@ RUN mdkir -p /user/src/app && \
 
 COPY src/requirements.txt /user/src/app/
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r /requirements.txt
 
 COPY src /usr/src/app
 EXPOSE 5080
-CMD ["gunicorn"]
+CMD ["gunicorn", "-c", "gunicorn_config.py"]

@@ -2,7 +2,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
-@app.rout('/') # 'http://www.mysite.com/'
+@app.rout('/')
 def home():
     return "Hello World"
 

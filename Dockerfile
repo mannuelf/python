@@ -3,7 +3,7 @@ ENV PYTHONBUFFERED 1
 
 WORKDIR /usr/src/app
 RUN mdkir -p /user/src/app && \
-    pip instsall --no-cache-dir -U pip wheel setuptools
+    pip install --no-cache-dir -U pip wheel setuptools
 
 COPY src/requirements.txt /user/src/app/
 

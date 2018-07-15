@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-rest-api
+  labels:
+    app: python-rest-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-rest-api
+  template:
+    metadata:
+      labels:
+        app: python-rest-api
+    spec:
+      containers:
+      - name: python-rest-api
+        image: nginx:1.7.9
+        ports:
+        - containerPort: 80

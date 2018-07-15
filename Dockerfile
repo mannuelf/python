@@ -11,3 +11,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY src /usr/src/app
 EXPOSE 5080
+CMD ["gunicorn"]

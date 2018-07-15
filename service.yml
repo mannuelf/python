@@ -1,17 +1,17 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: rest
+  name: python-rest
   labels:
-    app: rest
+    app: python-rest
     role: api
-    run: rest-api
+    run: python-rest-api
 spec:
   ports:
   - port: 80
     protocol: TCP
     targetPort: 5080
   selector:
-    app: rest
-    run: rest-api
+    app: python-rest
+    run: python-rest-api
   type: NodePort

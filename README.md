@@ -2,6 +2,8 @@
 
 ## REST API
 
+Representational state transfer
+
 - Stateless
 - A way of thinking about how a server responds to a client request
 - Asking for resources, a thing.

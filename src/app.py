@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import jsonify
 
 app = Flask(__name__)
 
@@ -6,8 +7,19 @@ app = Flask(__name__)
 def home():
     return "Hello World"
 
-# @app.route('/') by default is a get request
+stores = [
+    {
+        'name': 'MannuelShops',
+        'items': [
+            {
+                'name': 'Google Nexus',
+                'price': 399.99
+            }
+        ]
+    }
+]
 
+# @app.route('/') by default is a get request
 # POST /store data: {name:}
 @app.route('/store', methods=['POST'])
 def create_store():
@@ -21,7 +33,7 @@ def get_store_name(name):
 # GET /store
 @app.route('/store', methods=['GET'])
 def get_store():
-    pass
+    return jsonify({'stores': stores})
 
 # POST /store/<string:name/item
 @app.route('/store/<string:name>/item', methods=['POST'])

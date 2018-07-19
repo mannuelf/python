@@ -7,10 +7,14 @@
 - Asking for resources, a thing.
 - one request cannot depend on any other request, does not know about any other previous request.
 
-```bash
-GET
-PUT
-POST
-PATCH
-DELETE
-```
+## As a server
+
+I accept these commands
+
+|Verb|Description|
+|-|-|
+|GET| used to send data
+|PUT| update / replace
+|POST| used to receive data
+|PATCH| update / modify
+|DELETE| delete

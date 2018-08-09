@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from flask_restful import Resource, Api
 
 # define the app
@@ -11,13 +11,21 @@ items = []
 # define the resource
 class Item(Resource):
     def get(self, name):
-        for item in items:
-            if item['name'] == name:
-                return item
-        return {'item': None}, 404
+        # Can do it like this with for loop
+        # for item in items:
+        #     if item['name'] == name:
+        #         return item
+
+        # or can use lambda filter function
+        item = next(filter(lambda x: x['name'] == name, items))
+        return {'item': item}, 200 if item else 404
     
     def post(self, name):
-        item = {'name': name, 'price': 12.00 }
+        data = request.get_json()
+        # if you not sure if client will send you json you can force equals true
+        # data = request.get_json(silent=True)
+        # data = request.get_json(force=True)
+        item = {'name': name, 'price': data['price'] }
         items.append(item)
         return item, 201
 

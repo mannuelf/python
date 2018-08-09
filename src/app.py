@@ -21,6 +21,8 @@ class Item(Resource):
         return {'item': item}, 200 if item else 404
     
     def post(self, name):
+        if next(filter(lambda x: x['name'] == name, items), None):
+            return {'message': "An item with name '{}' already exists.".format(name)}, 400
         data = request.get_json()
         # if you not sure if client will send you json you can force equals true
         # data = request.get_json(silent=True)

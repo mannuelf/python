@@ -1,14 +1,16 @@
-FROM python:3.6.5
+FROM python:3.5
+
 ENV PYTHONBUFFERED 1
 
 WORKDIR /usr/src/app
-RUN mdkir -p /user/src/app && \
-    pip install --no-cache-dir -U pip wheel setuptools
 
-COPY src/requirements.txt /user/src/app/
+RUN mkdir -p /user/src/app && \
+    pip install --no-cache-dir -U pip wheel setuptools && \
+    pip install Flask && \
+    pip install Flask-RESTful
 
-RUN pip install --no-cache-dir -r /requirements.txt
-
+COPY requirements.txt /user/src/app/
 COPY src /usr/src/app
-EXPOSE 5080
-CMD ["gunicorn", "-c", "gunicorn_config.py"]
+EXPOSE 8081
+
+CMD ["python", "./src/app.py"]
